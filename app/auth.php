@@ -17,6 +17,11 @@ class Auth {
             return false;
         }
     }
+    public function register($username, $password, $phoneNumber, $first_name, $last_name, $father_name, $salaryPerHour){
+        $query = "INSERT INTO users (username, password, phoneNumber, first_name, last_name, father_name, salaryPerHour, role_id) VALUES ('$username', '$password', '$phoneNumber', '$first_name', '$last_name', '$father_name', '$salaryPerHour', 1)";
+        $this->db->query($query);
+        return true;
+    }
     public function checkLogin(){
         if(isset($_SESSION['user'])){
             return true;

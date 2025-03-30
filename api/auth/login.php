@@ -5,8 +5,8 @@ require_once '../../app/auth.php';
 
 $auth = new Auth();
 
-$username = secure_input($_GET['username']);
-$password = secure_input($_GET['password']);
+$username = secure_input($_GET['username'], "نام کاربری");
+$password = secure_input($_GET['password'], "رمز عبور");
 
 $user = $auth->login($username, $password);
 
